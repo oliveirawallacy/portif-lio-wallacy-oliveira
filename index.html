@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>DevClub | Portifólio</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+   <div class="particulas">
+
+   </div>
+   <nav class="navegacao">
+    <ul class="menu">
+      <li>
+         <a href="#inicio" class="menu-link"> Início</a>
+      </li>
+      <li>
+         <a href="#sobre" class="menu-link"> Sobre</a>
+      </li>
+      <li>
+         <a href="#projetos" class="menu-link"> Projetos</a>
+      </li>
+      <li>
+         <a href="#contatos" class="menu-link"> Contato</a>
+      </li>
+    </ul>
+   </nav>
+   <main id="inicio" class="cabecalho">
+      <figure>
+      <img src="./imag/wallacy.jpg" alt="foto de wallcy Oliveira" class="foto-perfil">
+      </figure>
+      <h1>Wallacy Oliveira</h1>
+      <p class="cabecalho-sub-titulo">Desenvolvedor full stack</p>
+   </main>
+   <section id="sobre" class="sobre">
+     <h2 class="sobre-titulo">Sobre Mim</h2>
+     <div class="sobre-caixa">
+      <p class="sobre-paragrafo">
+         olá! Me chamo Wallacy Oliveira, sou Estudante de TI | Desenvolvedor em Formação, apaixonado por tecnologia e inovações, sempre em busca de aprender e evoluir.
+      </p> 
+     </div>
+   </section>
+   <section id="projetos" class="projetos">
+      <h2 class="projetos-titulo">Meus Projetos</h2>
+      <div class="projetos-caixa">
+
+          <div class="projetos-card">
+            <img src="./imag/projeto1.jpg" alt="projetos 1" class="projetos-imagem">
+            <div class="caixa-textos-projetos">
+            <h3 class="info-projetos">CEO: Confeitaria</h3>
+            <p class="paragrafo-projetos">confeitaria artesanal, moderna e inovadora.</p>
+            </div>
+          </div>
+
+           <div class="projetos-card">
+            <img src="./imag/projeto2.png" alt="projetos 2" class="projetos-imagem">
+            <div class="caixa-textos-projetos">
+            <h3 class="info-projetos">Projeto Código Alta Performance</h3>
+            <p class="paragrafo-projetos">Vitrine digital responsiva para venda de terrários e plantas.</p>
+            </div>
+          </div>
+
+           <div class="projetos-card">
+            <img src="./imag/projeto3.jpg" alt="projetos 3" class="projetos-imagem">
+            <div class="caixa-textos-projetos">  
+            <h3 class="info-projetos">Estudos: S.I</h3>
+            <p class="paragrafo-projetos">Aluno na graduação sistemas de informação buscando invações e crescimento profissional.</p>
+            </div>
+          </div>
+
+      </div>
+   </section>
+
+   <Section id="contatos" class="contatos">
+      <h2 class="contatos-titulo">Entre em Contato</h2>
+      <form class="formulario-contato" id="formulario">
+         <div class="grupo-form">
+           <input placeholder="nome" class="campo-form" id="nome">
+         </div>
+         <div class="grupo-form">
+            <textarea class="campo-form" placeholder="Digite sua Mensagem!" id="mensagem" rows="6"></textarea>
+         </div>
+        <button type="submit" class="botao-form">
+         Enviar whatsApp
+
+        </button>
+      </form>
+   </Section>
+   <script>
+     const form = document.getElementById('formulario');
+     const nome = document.getElementById('nome');
+     const mensagem = document.getElementById('mensagem');
+     const telefone = '5581999890175';
+
+     form.addEventListener('submit', function (event) {
+       event.preventDefault();
+
+       const texto = `Olá, meu nome é ${nome.value}. ${mensagem.value}`;
+       const msgFormatada = encodeURIComponent(texto);
+       const url = `https://wa.me/${"5581999890175"}?text=${msgFormatada}`;
+
+       window.open(url, '_blank');
+     });
+   </script>
+</body>
+</html>
